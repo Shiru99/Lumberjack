@@ -1,0 +1,46 @@
+if(tr[i].cut==0 && (tr[i].x != x1 || tr[i].y != y1))
+			{  
+				s.push_back(cut_up(tr,i,k));
+				s.push_back(cut_down(tr,i,k));
+				s.push_back(cut_right(tr,i,k));
+				s.push_back(cut_left(tr,i,k));
+				//cout<<s[0]<<" "<<s[1]<<" "<<s[2]<<" "<<s[3]<<endl;
+				d = gain(s);
+				x2 =abs(tr[i].x - x1);
+				y2 = abs(tr[i].y - y1);
+				z2 = x2 + y2;
+				if((t-(z2+tr[i].d))>=0)
+				{
+				 	near = (s[d]/float(z2+tr[i].d));
+				 	//cout<<near<<endl;
+				}
+				 //cout<<near<<endl;
+				 //check = 1;
+				// cout<<x2<<"  "<<y2<<" coming"<<z2<<endl;
+				if(near>max){
+					 out = i;
+					 max = near;
+				}
+			    s.resize(0);
+			}
+if(tr[i].cut==0 && (tr[i].x != x1 || tr[i].y != y1))
+			{  
+				s.push_back(cut_up(tr,i,k,i));
+				s.push_back(cut_down(tr,i,k,i));
+				s.push_back(cut_right(tr,i,k,i));
+				s.push_back(cut_left(tr,i,k,i));
+				d = gain(s);
+				x2 =abs(tr[i].x - x1);
+				y2 = abs(tr[i].y - y1);
+				z2 = x2 + y2;
+				if((t-(z2+tr[i].d))>=0)
+				{
+				 	near = (s[d]/float(z2+tr[i].d));
+				}
+				if(near>max)
+				{
+					 out = i;
+					 max = near;
+				}
+			    s.resize(0);
+			}
